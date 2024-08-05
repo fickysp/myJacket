@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Roboto:wght@300;400;500;700;900&family=Square+Peg&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300;400;500;700;900&display=swap");
+:root {
+    --button: #8cb560;
+    --yellow: #febd00;
+    --green: #62ae2f;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.2s;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+@font-face {
+    font-family: "Roxborough CF"; /* Nama font yang akan digunakan */
+    src: url("../fonts/Roxborough\ CF.ttf") format("truetype"); /* Ganti dengan path yang benar */
+    /* Jika font memiliki format yang berbeda, tambahkan format lain seperti format('woff'), format('woff2') */
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 7%;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    font-family: "Poppins", sans;
+}
+.logo h1 {
+    color: var(--black);
+    margin-right: 5px;
+    font-size: 25px;
+}
+.logo i {
+    margin-right: 10px;
+}
+.navbar a {
+    font-size: 18px;
+    color: black;
+    padding: 1rem;
+    margin-left: 5px;
+    position: relative;
+    text-decoration: none;
+}
+.navbar a::after {
+    content: "";
+    background-color: rgb(218, 165, 21);
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 3px;
+    top: 100%;
+    transition: 0.5s;
+}
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.icons div {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.icons .fa-shopping-cart{
+    color: black;
+}
+.icons .fa-shopping-cart:hover{
+    cursor: pointer;
+    color: #797979;
+}
+
+.icons .badge{
+    color: rgb(255, 255, 255);
+    border-radius: 20%;
+    background-color: red;
+    font-size: 1.5rem;
+    padding: 2px 8px;
+    text-align: center;
+}
+.icons #menu-bar {
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+.icons #cart {
+    color: black;
+    font-size: 3rem;
+}
+
+.add-cart {
+    position: absolute;
+    top: 110%;
+    right: 5%;
+    width: 25rem;
+    background-color: rgb(247, 249, 248);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.add-cart.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.main-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.main-cart i {
+    font-size: 18px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: #acae2f;
+}
+.main-cart i:hover {
+    cursor: pointer;
+    color: var(--yellow);
+}
+
+.btn1 {
+    display: inline-block;
+    background: #b8860b;
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 10px;
+    transition: background 1s;
+    text-decoration: none;
+}
+.btn2 {
+    display: inline-block;
+    background: #b8860b;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 6px;
+    color: #fff;
+    margin: 10px 5px 15px 5px;
+    height: 30px;
+    width: 80%;
+    border-radius: 10px;
+    transition: background 1s;
+    text-decoration: none;
+}
+.btn2 i{
+    padding-right: 8 px;
+}
+.main-cart img {
+    width: 100px;
+    padding: 1.5rem 1rem;
+}
+
+.main-cart button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: var(--green);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+.main-cart button:hover {
+    border-radius: 0;
+    cursor: pointer;
+}
+.home {
+    background-image: url("../img/Fhome.jpeg");
+    padding: 5rem 7%;
+    background-size: cover;
+    height: 450px;
+}
+.main-home {
+    margin-top: 27%;
+    height: 70px;
+    background-color: #f8f7f6;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+}
+.content-home {
+    color: #333;
+    padding-top: 14px;
+    font-family: "Roxborough CF", sans-serif;
+}
+
+.inner-home .home-img {
+    padding: 2rem;
+}
+.inner-home .home-img img {
+    width: 100%;
+}
+
+.our-menu-item {
+    padding: 2rem 7%;
+    background-color: #e5e4e2;
+    background-image: url("../img/Design\ Elements.png");
+    background-position: 100% 100%;
+}
+
+.our-menu-item .heading-menu {
+    text-align: center;
+}
+.our-menu-item .heading-menu h1 {
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 2rem;
+}
+.main-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8rem;
+    justify-content: center;
+    padding-top: 2rem;
+}
+.inner-menu {
+    flex: 1 1 280px;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+    max-width: 300px;
+}
+.inner-menu::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--green);
+    left: 0;
+    transition: 0.5s;
+}
+.inner-menu:hover:after {
+    width: 100%;
+}
+
+.image-overlay {
+    position: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.menu-main-icon {
+    position: absolute;
+    top: 12rem;
+    left: 30%;
+    color: black;
+    z-index: 200;
+    display: none;
+    transition: 0.5;
+}
+.menu-main-icon i {
+    font-size: 22px;
+    padding: 1rem;
+    background: white;
+    margin: 1rem;
+}
+.inner-menu:hover .menu-main-icon {
+    display: initial;
+}
+.inner-menu:hover .image-overlay {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.inner-menu .menu-content {
+    padding: 2rem;
+    position: relative;
+    max-width: 300px;
+}
+
+.inner-menu .menu-content img {
+    width: 100%;
+}
+.inner-menu .menu-content h4 {
+    color: #b8860b;
+    font-size: 18px;
+    font-family: "poppins", sans;
+    padding: 0.5rem 0;
+}
+.menu-star i {
+    color: #b8860b;
+    font-size: 18px;
+    padding: 0.5rem 0;
+}
+.chose-us {
+    padding: 4rem 7%;
+    background: linear-gradient(to bottom, #e5e4e2, #ffb700);
+}
+.chose-headings {
+    text-align: center;
+}
+.chose-headings h4 {
+    color: #b8860b;
+    font-size: 30px;
+    font-family: "dancing script", cursive;
+}
+.chose-headings h1 {
+    font-size: 36px;
+    padding: 2rem 0;
+    padding-bottom: 4rem;
+}
+.main-chose {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.inner-chose {
+    flex: 1 1 300px;
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid var(--green);
+    cursor: pointer;
+}
+.inner-chose:hover {
+    border-radius: 10px;
+}
+.chose-content {
+    padding: 1rem;
+}
+.chose-content h2 {
+    color: var(--green);
+    font-size: 25px;
+    padding: 1rem;
+}
+.chose-content p {
+    font-size: 12px;
+    font-family: "Poppins", sans;
+}
+
+.inner-chose {
+    background-color: white;
+    height: 350px;
+}
+#history {
+    padding-top: 2rem !important;
+}
+.history-para {
+    text-align: left;
+}
+.history-para h2 {
+    color: #b8860b;
+    font-size: 30px;
+    font-family: "dancing script", cursive;
+}
+.latest-new {
+    padding: 4rem 7%;
+}
+.latest-heading {
+    text-align: center;
+}
+.latest-heading h3 {
+    color: #b8860b;
+    font-size: 30px;
+    font-family: "dancing script", cursive;
+}
+.latest-heading h1 {
+    font-size: 36px;
+    padding: 2rem 0;
+    padding-bottom: 4rem;
+}
+.main-latest {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.inner-latest {
+    flex: 1 1 280px;
+}
+.inner-content img {
+    width: 100%;
+    border-radius: 15px;
+}
+.latest-content h2 {
+    font-size: 22px;
+    color: #b8860b;
+    padding: 1rem 0;
+}
+.latest-content p {
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.latest-content a {
+    color: #b8860b;
+    font-size: 25px;
+    font-family: "dancing script", cursive;
+}
+/* Style untuk footer */
+.footer {
+    background-color: #313131;
+    padding: 50px 0 10px;
+    color: #ffffff;
+    text-align: center; 
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.app-logo img {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.footer-col img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #929292;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+hr {
+    border: 3PX;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style untuk hak cipta */
+.copyright {
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 20PX;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: beige;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(rgb(255, 251, 0), rgb(255, 153, 0));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/** CSS UNTUK PESAN **/
